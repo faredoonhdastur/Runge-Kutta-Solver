@@ -6,3 +6,5 @@ Note that for this feature I use `omp.h`, given this is a C++ project. The prepr
 
 ## ML-Based algorithm for step size
 Currently developing an ML-based method to choose a step size that gives accurate numerical solutions at low computational cost. For training, we consider the exact solution of the ODE, denoted by $y$, or a sufficiently accurate reference solution. We treat the numerical solution as a finite sequence of real numbers $y_i$ and define the errors $\varepsilon_i=|y(x_i)-y_i|$ at the grid points. We then minimize the computational cost subject to $\varepsilon_i\leq\tau$ for every $i$, where $\tau$ is the chosen error tolerance. The penalty term used to handle these constraints is discussed in `step_size_penalty.pdf`.
+
+This ML approach can be extended to higher-dimensional systems of ODEs and complex-valued problems, using an appropriate norm to measure the error between the exact and numerical solutions.
